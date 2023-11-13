@@ -8,6 +8,17 @@ public class Main {
 		
 		System.out.println(product1);
 		
+		
+//		SETTERS
+		product1.setName("Giubbotto");
+		
+		product1.setDescription("Nuova descrizione");
+		
+		product1.setPrice(80);
+		
+		product1.setIva(25);
+		
+//		GETTERS
 		System.out.println("Prezzo Pieno: " + product1.fullPrice());
 		
 		System.out.println("Full Name: " + product1.fullName());
@@ -16,14 +27,6 @@ public class Main {
 		
 		
 		System.out.println("Codice: " + product1.getCode());
-		
-		product1.setName("Giubbotto");
-		
-		product1.setDescription("Nuova descrizione");
-		
-		product1.setPrice(80);
-		
-		product1.setIva(25);
 		
 		System.out.println("Nome: " + product1.getName());
 		

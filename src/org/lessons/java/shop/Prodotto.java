@@ -10,7 +10,7 @@ public class Prodotto {
 	private float price;
 	private float iva;
 	
-	
+//	Constructor
 	public Prodotto(String name, String description, float price, float iva) {
 		this.code = generateCode();
 		setName(name);
@@ -20,6 +20,7 @@ public class Prodotto {
 		
 	}
 	
+//	Generate random code
 	public int generateCode() {
 		Random rand = new Random();
 		int n = rand.nextInt(0, Integer.MAX_VALUE);
@@ -63,16 +64,19 @@ public class Prodotto {
 		this.iva = iva;
 	}
 	
+//	Full Name, code + name
 	public String fullName() {
 		return code + "-" + name;
 	}
 	
+//	Full price
 	public String fullPrice() {
 		float totIva = iva / 100 + 1;
 		float totalPrice = price * totIva;
 		return String.format("%.02f", totalPrice);
 	}
 	
+//	Formatted code
 	public String fullCode() {	
 			
 		String codeString = String.valueOf(code);
