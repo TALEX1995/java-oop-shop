@@ -22,39 +22,68 @@ public class Prodotto {
 	
 	public int generateCode() {
 		Random rand = new Random();
-		int n = rand.nextInt(1000000);
+		int n = rand.nextInt(0, Integer.MAX_VALUE);
 		return n;
 	}
 	
 	public int getCode() {
 		return code;
 	}
-	public void setCode(int code) {
-		this.code = code;
-	}
+	
+	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public String getDescription() {
 		return description;
 	}
+	
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
 	public float getPrice() {
 		return price;
 	}
+	
 	public void setPrice(float price) {
 		this.price = price;
 	}
+	
 	public float getIva() {
 		return iva;
 	}
+	
 	public void setIva(float iva) {
 		this.iva = iva;
+	}
+	
+	public String fullName() {
+		return code + "-" + name;
+	}
+	
+	public String fullPrice() {
+		float totIva = iva / 100 + 1;
+		float totalPrice = price * totIva;
+		return String.format("%.02f", totalPrice);
+	}
+	
+	public String fullCode() {	
+			
+		String codeString = String.valueOf(code);
+	    int zerosToAdd = Math.max(0, 8 - codeString.length());
+
+	    String finalCode = codeString;
+	    for (int i = 0; i < zerosToAdd; i++) {
+	    	finalCode = 0 + finalCode;
+	    }
+
+	    return finalCode;
 	}
 	
 	@Override
